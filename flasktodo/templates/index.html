@@ -1,13 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>A simple to-do application</h1>
+<h1>A simple to-do application</h1>
 
+<ul>
+  {% for todo in todos %}
+  <li class="{{ "completed" if todo['completed'] }}">
+    {{ todo['description'] }}
+  </li>
+  <div class="buttons">
+    <form class="mark" action="{{ url_for('todos.mark', id=todo['id']) }}" method="post">
+      <button type="submit" name="button">done</button>
+    </form>
+    <form class="delete" action="{{ url_for('todos.delete', id=todo['id']) }}" method="post">
+      <button type="submit" name="button">delete</button>
+    </form>
+    <form class="new" action="{{ url_for('todos.edit', id=todo['id']) }}" method="Get">
+      <button type="submit" name="button">edit</button>
+    </form>
+  </div>
+  {% endfor %}
+</ul>
+<div class="new">
+  <form class="new" method="post">
+    <label for="task">New Task</label>
+    <input name="task" id="task" required>
+    <input type="submit" value="Add">
+  </form>
+</div>
+<div class="filters">
   <ul>
-    {% for todo in todos %}
-      <li class="{{ "completed" if todo['completed'] }}">
-        {{ todo['description'] }}
-      </li>
-    {% endfor %}
+    <li><a href="{{url_for( 'todos.completed')}}">completed</a></li>
+    <li><a href="{{url_for( 'todos.uncompleted')}}">uncompleted</a></li>
+    <li><a href="{{url_for( 'todos.all')}}">All</a></li>
+
   </ul>
+
+</div>
 {% endblock %}
