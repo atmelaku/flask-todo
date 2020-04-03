@@ -1,6 +1,7 @@
 from flask import g, Blueprint, render_template, request, redirect, url_for
 
 from . import db
+from flasktodo.auth import login_required
 import datetime
 
 
