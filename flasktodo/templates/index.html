@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>A simple to-do application</h1>
+<h1 class="header">A simple to-do application</h1>
 <div class="filters">
   <ul>
-    <li><a href="{{url_for( 'todos.completed')}}">completed</a></li>
-    <li><a href="{{url_for( 'todos.uncompleted')}}">uncompleted</a></li>
-    <li><a href="{{url_for( 'todos.all')}}">All</a></li>
+    <li><a href="{{url_for( 'todos.completed')}}">completed tasks</a></li>
+    <li><a href="{{url_for( 'todos.uncompleted')}}">uncompleted tasks</a></li>
+    <li><a href="{{url_for( 'todos.all')}}">All tasks</a></li>
 
   </ul>
 
@@ -18,7 +18,7 @@
     <input type="submit" value="Add">
   </form>
 </div>
-<ul>
+<ul class="body">
   {% for todo in todos %}
   <li class="{{ "completed" if todo['completed'] }}">
     {{ todo['description'] }}

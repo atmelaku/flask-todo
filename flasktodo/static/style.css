@@ -6,7 +6,7 @@
 
 html {
 font-size: 20px;
-background-color: gray;
+
 }
 
 body {
@@ -14,14 +14,75 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Helvetica, Arial, sans-serif;
-  justify-content: center;
   margin: 0;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 2rem;
   position: absolute;
+  background-color: gray;
+  height: 50vh;
+}
+.header {
+  color: white;
+  position: absolute;
+  top: 70px;
+  left: 300px;
+  font-size: 30px;
 }
 
 li.completed {
   color: #666666;
   text-decoration: line-through;
 }
+ul.auth li  {
+  padding: 10px;
+  background: blue;
+  margin-left: -40;
+  width: 150vh;
+  font-size: 40px;
+  list-style: none;
+}
+ul.auth {
+  padding-left: 0px;
+}
+ul.auth li:first-child {
+  border-radius: 2px solid gray;
+}
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+ a.logout, a.login, a.register{
+   border: 2px solid gray;
+
+ }
+ a.login:hover,  a.register:hover, a.logout  {
+
+   background: black;
+ }
+
+
+div.filters ul {
+  display: flex;
+  padding-left: 350px;
+  justify-content: space-between;
+  align-items: center;
+  background: #000080;
+  height: 50px;
+}
+div.new {
+  color: white;
+  position: absolute;
+  top: 250px;
+}
+ul.body {
+  border: green solid 3px;
+  background: #2874A6;
+}
+ div.buttons {
+   display: flex;
+   padding: 20px;
+
+ }
+
+ div
