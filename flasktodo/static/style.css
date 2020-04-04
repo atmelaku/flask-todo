@@ -10,7 +10,7 @@ font-size: 20px;
 }
 
 body {
-  color: #222222;
+  color: white;
   display: flex;
   flex-direction: column;
   font-family: Helvetica, Arial, sans-serif;
@@ -18,9 +18,13 @@ body {
   min-height: 50vh;
   padding: 2rem;
   position: absolute;
-  background-color: gray;
+  background-color: #6495ED;
   height: 50vh;
 }
+body li {
+  list-style: none;
+}
+
 .header {
   color: white;
   position: absolute;
@@ -30,7 +34,7 @@ body {
 }
 
 li.completed {
-  color: #666666;
+  color: green;
   text-decoration: line-through;
 }
 ul.auth li  {
@@ -56,7 +60,7 @@ a {
    border: 2px solid gray;
 
  }
- a.login:hover,  a.register:hover, a.logout  {
+ a.login:hover,  a.register:hover, a.logout:hover  {
 
    background: black;
  }
@@ -77,7 +81,7 @@ div.new {
 }
 ul.body {
   border: green solid 3px;
-  background: #2874A6;
+  background: #4B0082;
 }
  div.buttons {
    display: flex;
@@ -85,4 +89,28 @@ ul.body {
 
  }
 
- div
+ div.login-page, div.register-page {
+   background: #4B0082;
+   height: 20vh;
+ }
+li span, ul.auth li.out {
+  padding-left: 70%;
+}
+li span {
+   color: white;
+}
+div.edit {
+  background: #4B0082;
+  height: 100%;
+}
+.mark button:hover, div.filters ul li:first-child:hover {
+  background: green;
+}
+ div.filters ul li:nth-child(2):hover, .delete button:hover{
+  background: red;
+}
+div.filters ul li:nth-child(3n+3):hover, .edit button:hover{
+  color: black;
+  background: blue;
+
+}

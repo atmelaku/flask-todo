@@ -13,7 +13,7 @@
 <ul class="auth">
   {% if g.user %}
   <li><span>Welcome {{ g.user['email'] }}</span></li>
-  <li><a class="logout" href="{{ url_for('auth.logout') }}">Log Out</a></li>
+  <li class="out"><a class="logout" href="{{ url_for('auth.logout') }}">Log Out</a></li>
     {% else %}
   <li><a class="register" href="{{ url_for('auth.register') }}">Register</a></li>
   <li><a class="login" href="{{ url_for('auth.login') }}">Log In</a></li>

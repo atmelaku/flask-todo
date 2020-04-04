@@ -30,7 +30,7 @@
     <form class="delete" action="{{ url_for('todos.delete', id=todo['id']) }}" method="post">
       <button type="submit" name="button">delete</button>
     </form>
-    <form class="new" action="{{ url_for('todos.edit', id=todo['id']) }}" method="Get">
+    <form class="edit" action="{{ url_for('todos.edit', id=todo['id']) }}" method="Get">
       <button type="submit" name="button">edit</button>
     </form>
   </div>

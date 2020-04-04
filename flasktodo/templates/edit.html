@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="edit">
 <h1>Edit Task</h1>
-<form class="" method="post">
+<form method="post">
   <label for="new">Update Task</label>
   <input type="text" name="new" value="{{todo['description']}}" required>
   <input type="submit" name="update" value="Update">
 </form>
-
+</div>
 {% endblock %}
