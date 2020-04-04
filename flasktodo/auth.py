@@ -44,8 +44,9 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        error = None
+
         cur = db.get_db().cursor()
+        error = None
         cur.execute(
             'SELECT * FROM users WHERE email = %s', (email,)
         )
@@ -58,10 +59,10 @@ def login():
 
         if error is None:
             session.clear()
-            session['users_id'] = user['id']
+            session['user_id'] = user['id']
             return redirect(url_for('todos.index'))
 
-        cur.close()
+        flash(error)
 
     return render_template('auth/login.html')
 @bp.before_app_request

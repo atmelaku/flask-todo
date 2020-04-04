@@ -2,7 +2,22 @@
 
 {% block content %}
 <h1>A simple to-do application</h1>
+<div class="filters">
+  <ul>
+    <li><a href="{{url_for( 'todos.completed')}}">completed</a></li>
+    <li><a href="{{url_for( 'todos.uncompleted')}}">uncompleted</a></li>
+    <li><a href="{{url_for( 'todos.all')}}">All</a></li>
 
+  </ul>
+
+</div>
+<div class="new">
+  <form class="new" method="post">
+    <label for="task">New Task</label>
+    <input name="task" id="task" required>
+    <input type="submit" value="Add">
+  </form>
+</div>
 <ul>
   {% for todo in todos %}
   <li class="{{ "completed" if todo['completed'] }}">
@@ -21,20 +36,4 @@
   </div>
   {% endfor %}
 </ul>
-<div class="new">
-  <form class="new" method="post">
-    <label for="task">New Task</label>
-    <input name="task" id="task" required>
-    <input type="submit" value="Add">
-  </form>
-</div>
-<div class="filters">
-  <ul>
-    <li><a href="{{url_for( 'todos.completed')}}">completed</a></li>
-    <li><a href="{{url_for( 'todos.uncompleted')}}">uncompleted</a></li>
-    <li><a href="{{url_for( 'todos.all')}}">All</a></li>
-
-  </ul>
-
-</div>
 {% endblock %}
